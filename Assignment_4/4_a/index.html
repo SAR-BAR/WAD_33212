@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <style>
+        h1 {
+            color: green;
+        }
+
+        .change-color {
+            transition: background-color 0.3s;
+            background-color: white;
+        }
+
+        .swipe-up {
+            background-color: yellow;
+        }
+
+        .swipe-down {
+            background-color: lightblue;
+        }
+
+        .touch-event {
+            font-size: 20px;
+        }
+
+        .draggable-square {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+    <script>
+        $(document).on("pagecreate", function () {
+            $("#divID2").toolbar({
+                addBackBtn: true,
+                backBtnText: "Page 2",
+            });
+
+            $("#divID1").toolbar({
+                addBackBtn: true,
+                backBtnText: "Page 1",
+            });
+
+            $("#page1").on("swiperight", function () {
+                $.mobile.changePage("#page2", { transition: "slide" });
+            })
+
+            $("#page2").on("swipeleft", function () {
+                $.mobile.changePage("#page1", { transition: "slide", reverse: true });
+            })
+
+            $("#page1").on("swipeup", function () {
+                $(this).addClass("swipe-up");
+
+            }).on("swipedown", function () {
+                $(this).addClass("swipe-down");
+
+            }).on("tap", function () {
+                $(this).find(".touch-event").text("Tapped!");
+
+            })
+
+            $("#page2").on("swipeup", function () {
+                $(this).addClass("swipe-up");
+
+            }).on("swipedown", function () {
+                $(this).addClass("swipe-down");
+
+            }).on("tap", function () {
+                $(this).find(".touch-event").text("Tapped!");
+
+            });
+
+            $(".draggable-square").draggable();
+        });
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <div data-role="page" id="page1" class="change-color">
+            <div id="divID1" data-role="header">
+                <h1> Home Page </h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <h2> Welcome to my website </h2>
+                <div id="draggable-square" class="draggable-square"></div>
+            </div>
+            <a href="#page2"> Go to page 2 </a>
+            <p> You can swipe right to go to page 2 </p>
+            <div data-role="footer">
+                <p> You are at page one </p>
+                <p> Swipe up and down to change color </p>
+            </div>
+        </div>
+
+        <div data-role="page" id="page2" class="change-color">
+            <div id="divID2" data-role="header">
+                <h2> Header Toolbar </h2>
+            </div>
+            <h1> My Website ! </h1>
+            <a href="#page1"> Go to page 1 </a>
+            <p> Else just swipe left to go to page 1 </p>
+            <div data-role="footer">
+                <p> You are at page two </p>
+                <p> Swipe up and down to change color </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
