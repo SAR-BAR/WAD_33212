@@ -1,0 +1,87 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.menu-bar{
+    background-color:mistyrose;
+    text-align:center;
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    color: crimson;
+    list-style: none;
+}
+.menu-bar ul li{
+    width: 120px;
+    margin: 30px;
+    padding: 10px;
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color:brown;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.menu-bar ul li a:hover{
+    color: blue;
+}
+
+.active, .menu-bar ul li:hover{
+    color: aliceblue;
+    background-color:darksalmon;
+ 
+    border-radius: 8px;
+    padding: 10px;
+}
+
+body{
+    background-color: azure;
+}
+
+.description {
+  height: 40vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 280px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  text-align: center;
+  margin-top: 4rem;
+  margin: 10px;
+}
+
+.card {
+  margin-bottom: 2rem;
+  border-radius: 2px;
+  border-style:inherit;
+  padding: 8px;
+  background-color: bisque;
+      padding: 50px;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.card:hover{
+ background-color:mistyrose;
+ border: 3px solid black;  
+ 
+}
+
+.card .icon img {
+  width: 7rem;
+  height: auto;
+  margin-bottom: 3rem;
+}

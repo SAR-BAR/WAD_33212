@@ -1,0 +1,201 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+   background-image: url("pune-institute-of-computer-technology-pune-215371.jpg");
+   background-size: cover;
+   background-position: center;
+}
+body h1{
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.menu-bar{
+    background-color:mistyrose;
+    text-align:center;
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    color: crimson;
+    list-style: none;
+}
+.menu-bar ul li{
+    width: 120px;
+    margin: 30px;
+    padding: 10px;
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color:brown;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.menu-bar ul li a:hover{
+    color: blue;
+}
+
+.active, .menu-bar ul li:hover{
+    color: aliceblue;
+    background-color:darksalmon;
+ 
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+.form-container{
+    background-color: rgba(255, 223, 201, 0.7); 
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 0;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+    margin: 50px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 72vh; 
+}
+.form-container .title{
+    color: rgb(240, 74, 3);
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 0 25px;
+    margin-bottom: 50px;
+}
+.form-container .title:after{
+    content: '';
+    background-color: #e5ada0;
+    height: 3px;
+    width: 60px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+.form-container .sub-title{
+    color: #fc7e50;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+}
+.form-container .form-horizontal{ font-size: 0; }
+.form-container .form-horizontal .form-group{
+    color: #000000;
+    width: 50%;
+    padding: 0 8px;
+    margin: 0 0 30px;
+    display: inline-block;
+}
+.form-container .form-horizontal .form-group:nth-child(4){ margin-bottom: 30px; }
+.form-container .form-horizontal .form-group label{
+    font-size: 17px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.form-container .form-horizontal .form-control{
+    color: #4d5c60;
+    background: #d1e0de;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    border: 2px solid #eef4ce;
+    box-shadow: none;
+}
+.form-container .form-horizontal .form-control:focus{ box-shadow: 0 0 5px #525266; }
+.form-container .form-horizontal .check-terms{
+    padding: 0 8px;
+    margin: 0 0 25px;
+}
+.form-container .form-horizontal .check-terms .check-label{
+    color: #51c23a;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    vertical-align: top;
+    display: inline-block;
+}
+.form-container .form-horizontal .check-terms .checkbox{
+    height: 17px;
+    width: 17px;
+    min-height: auto;
+    margin: 2px 8px 0 0;
+    border: 2px solid #ed7926;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.3s ease 0s;
+}
+.form-container .form-horizontal .check-terms .checkbox:before{
+    content: '';
+    height: 5px;
+    width: 9px;
+    border-bottom: 2px solid #d1e0ce;
+    border-left: 2px solid #d1e0ce;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 2px;
+    top: 2.5px;
+    transition: all 0.3s ease;
+}
+.form-container .form-horizontal .check-terms .checkbox:checked:before{ opacity: 1; }
+.form-container .form-horizontal .check-terms .checkbox:not(:checked):before{ opacity: 0; }
+.form-container .form-horizontal .check-terms .checkbox:focus{ outline: none; }
+.form-container .signin-link{
+    color: #121111;
+    font-size: 14px;
+    width: calc(100% - 190px);
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+.form-container .signin-link a{
+    color: #1a1dec;
+    font-weight: 600;
+    transition: all 0.3s ease 0s;
+}
+.form-container .signin-link a:hover{ text-decoration: underline; }
+.form-container .form-horizontal .signup{
+    color: #4d5c60;
+    background: #d1e0de;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 160px;
+    padding: 8px 15px 9px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+}
+.form-container .form-horizontal .btn:hover,
+.form-container .form-horizontal .btn:focus{
+    text-shadow: 0 0 5px rgba(239, 126, 126, 0.904);
+    box-shadow: 3px 3px rgba(0,0,0,0.15),5px 5px rgba(0,0,0,0.1);
+    outline: none;
+}
+@media only screen and (max-width:479px){
+    .form-container .form-horizontal .form-group{ width: 100%; }
+    .form-container .signin-link{
+        width: 100%;
+        margin: 0 10px 15px;
+    }
+}

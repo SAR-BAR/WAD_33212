@@ -1,0 +1,82 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+   background-image: url("pune-institute-of-computer-technology-pune-215371.jpg");
+   background-size: cover;
+   background-position: center;
+}
+body h1{
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+.menu-bar{
+    background-color:mistyrose;
+    text-align:center;
+}
+
+.menu-bar ul{
+    display: inline-flex;
+    color: crimson;
+    list-style: none;
+}
+.menu-bar ul li{
+    width: 120px;
+    margin: 30px;
+    padding: 10px;
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color:brown;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.menu-bar ul li a:hover{
+    color: blue;
+}
+
+.active, .menu-bar ul li:hover{
+    color: aliceblue;
+    background-color:darksalmon;
+ 
+    border-radius: 8px;
+    padding: 10px;
+}
+
+section{
+    margin-top: -80px;
+    margin:80px;
+    min-width: 50vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container{
+    margin:50px;
+    min-width: 100vh;
+    background-color: rgb(255, 228, 225, 0.5);
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer{
+    margin: 60px;
+     background-color:mistyrose;
+    text-align:center;
+    color:brown;
+    font-size: small;
+    font-family: Verdana;
+    min-width: none;
+}

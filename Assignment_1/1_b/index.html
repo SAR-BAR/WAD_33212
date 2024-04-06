@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> User Registration Form </title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        form,
+        h2 {
+            width: 30%;
+            margin: 5% auto;
+        }
+
+        input {
+            margin: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2> User Registration Form </h2>
+    <form id="registrationForm" method="post">
+        <label>First Name</label>
+        <input type="text" name="fullName" id="fullName" placeholder="Name Surname Lastname" pattern="[A-Za-z ]*"
+            class="form-control" required>
+
+        <label>Email</label>
+        <input type="email" name="userEmail" id="userEmail" class="form-control" required>
+
+        <label>User Name</label>
+        <input type="text" name="userName" id="userName" class="form-control" required>
+
+        <label>Password</label>
+        <input type="password" name="userPassword" id="userPassword" class="form-control" required>
+
+
+        <input type="button" onclick="submitForm()" name="submit" value="submit" id="submit">
+    </form>
+
+
+    <!-- Your HTML remains the same -->
+
+    <script>
+        function submitForm() {
+            var name = $('input[name=fullName]').val();
+            var email = $('input[name=userEmail]').val();
+            var username = $('input[name=userName]').val();
+            var password = $('input[name=userPassword]').val();
+
+            var formData = 'name=' + name + '&email=' + email + '&username=' + username + '&password=' + password;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:3000/output', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function () {
+                var new_window = window.open(null, '', '_blank');
+                new_window.document.write(xhr.responseText);
+            };
+
+            xhr.onerror = function () {
+                console.error('Request failed ');
+                alert('Failed to submit form');
+            };
+
+            // Don't forget to send the formData
+            xhr.send(formData);
+        }
+    </script>
+
+
+</body>
+
+</html>
